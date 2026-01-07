@@ -130,7 +130,7 @@ Spacenav::Spacenav(const rclcpp::NodeOptions & options)
     this->create_publisher<sensor_msgs::msg::Joy>("spacenav/joy", 10);
 
   timer_ =
-    this->create_wall_timer(1ms, std::bind(&Spacenav::poll_spacenav, this));
+    this->create_wall_timer(33ms, std::bind(&Spacenav::poll_spacenav, this));
 
   RCLCPP_DEBUG(
     get_logger(), "full scale: %.1f", full_scale);
